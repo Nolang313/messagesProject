@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Message Project</title>
+    </head>
+    <body>
+        <h1 style="color: green;">Joke Generator</h1>
+        <div id="displayMessage" style="width:100%; height:100px; background-color:darkcyan; font-size:3em; color: whitesmoke;">Click for Message</div>
+        <script>
+            
+            window.onload = function() {
+                document.getElementById("displayMessage").addEventListener("click", generateMessage);
+            }
+
+            window.onload = function() {
+                document.getElementById("displayMessage").addEventListener("click", generateMessage);
+            }
+            const questionArr = ["What do kids play when their mom is using the phone?", "What do you call an ant who fights crime?", "Why are snails slow?", "What’s the smartest insect?"];
+
+            const answerArr = ["Bored games.", "A vigilANTe!", "Because they’re carrying a house on their back.", "A spelling bee!"];
+
+            function generateMessage() {
+                let qidx = parseInt(Math.random()*questionArr.length);
+                let aidx = parseInt(Math.random()*answerArr.length);
+                if (questionArr[qidx] != "undefined" && answerArr[aidx] != "undefined" ){
+                    this.innerText = questionArr[qidx] + "       " + answerArr[aidx];
+                }
+                else throw new Error("Undefined error, please click again.")
+            }
+        </script>
+    </body>
+</html>
